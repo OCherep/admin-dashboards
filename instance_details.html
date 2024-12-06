@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Instance Details</title>
+</head>
+<body>
+    <h1>Details for Instance {{ instance_id }}</h1>
+    {% for graph in graphs %}
+        <div>{{ graph | safe }}</div>
+    {% endfor %}
+</body>
+</html>
