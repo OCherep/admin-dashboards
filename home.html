@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AWS Resources</title>
+</head>
+<body>
+    <h1>AWS EC2 Instances</h1>
+    <table border="1">
+        <tr>
+            <th>Instance ID</th>
+            <th>State</th>
+            <th>Type</th>
+            <th>Launch Time</th>
+            <th>Private IP</th>
+            <th>Public IP</th>
+            <th>Details</th>
+        </tr>
+        {% for instance in instances %}
+        <tr>
+            <td>{{ instance['InstanceId'] }}</td>
+            <td>{{ instance['State'] }}</td>
+            <td>{{ instance['Type'] }}</td>
+            <td>{{ instance['LaunchTime'] }}</td>
+            <td>{{ instance['PrivateIpAddress'] }}</td>
+            <td>{{ instance['PublicIpAddress'] }}</td>
+            <td><a href="/instance/{{ instance['InstanceId'] }}">View</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
